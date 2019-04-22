@@ -1,0 +1,32 @@
+<ul class="categories-list">
+  <li (click)="categoryActive($event)" [ngClass]="{'categories-list__item':notActive, 'all': true, 'categories-list__item-active': active}">
+    <span>
+      <fa-icon [icon]="faBars"></fa-icon>
+    </span>
+    All Categories
+  </li>
+  <li (click)="categoryActive($event)" [ngClass]="{'categories-list__item':notActive, 'laptop': true ,'categories-list__item-active': !active}">
+    <span>
+      <fa-icon [icon]="faLaptop"></fa-icon>
+    </span>
+    Laptops
+  </li>
+  <li (click)="categoryActive($event)" [ngClass]="{'categories-list__item':notActive, 'monitor': true, 'categories-list__item-active': !active}">
+    <span>
+      <fa-icon [icon]="faTv"></fa-icon>
+    </span>
+    Monitors
+  </li>
+  <li (click)="categoryActive($event)" [ngClass]="{'categories-list__item':notActive, 'komputer': true, 'categories-list__item-active': !active}">
+    <span>
+      <fa-icon [icon]="faDesktop"></fa-icon>
+    </span>
+    Komputers
+  </li>
+  <li (click)="categoryActive($event)" [ngClass]="{'categories-list__item':notActive, 'keyboard': true, 'categories-list__item-active': !active}">
+    <span>
+      <fa-icon [icon]="faKeyboard"></fa-icon>
+    </span>
+    Keyboards
+  </li>
+</ul>

@@ -1,0 +1,105 @@
+@import '../../../sass/colors.sass'
+@import '../../../sass/mixins.sass'
+
+.sC_left-container
+  width: calc(65% - 30px)
+  background-color: $color_white
+  padding: 15px
+  box-shadow: 2px 2px 2px 2px darken($color_lightGray, 5%)
+
+.sC_right-container
+  width: calc(30% - 30px)
+  padding: 15px
+  background-color: $color_white
+  box-shadow: 2px 2px 2px 2px darken($color_lightGray, 5%)
+
+.titleSC
+  display: flex
+  justify-content: space-between
+  & .itemsInSC
+    span
+      color: $color_lightCoral
+      font-weight: 700
+  & .clearSC
+    text-decoration: underline
+    cursor: pointer
+    padding-left: 10px
+    &:hover
+      color: $color_lightCoral
+
+.shoppingCart
+  &-price
+    color: $color_lightCoral
+    font-weight: 700
+  &-quantity
+    font-weight: 700
+    button
+      font-size: 20px
+      font-weight: bold
+      outline: none
+      width: 35px
+      height: 35px
+      border-radius: 5px
+      background: $color_gray
+      color: $color_white
+      border: none
+      margin: 5px
+      &:hover
+        opacity: .5
+  &-table
+    margin-top: 15px
+    width: 100%
+    text-align: center
+    & tr
+      background-color: $color_lightGray
+      &:not(:last-of-type)
+        border-bottom: 10px solid $color_white
+      &:first-of-type
+        background-color: $color_gray
+        color: $color_white
+        & th
+          font-family: 'Raleway', sans-serif
+          padding: 10px
+    & td
+      font-family: 'Verdana', sans-serif
+      padding: 10px
+      &:not(:last-of-type)
+        border-right: 1px solid darken($color_lightGray,5%)
+
+.orderSummary
+  & .placeOrder-btn
+    font-family: 'Raleway', sans-serif
+    font-weight: 700
+    font-size: 16px
+    padding: 10px 30px
+    border: 2px solid $color_green
+    outline: none
+    background-color: $color_lightGreen
+    color: $color_gray
+    @include transition(.15s)
+    &:hover
+      background-color: $color_gray
+      border-color: $color_gray
+      color: $color_white
+  & .order_title
+    font-family: 'Raleway', sans-serif
+    font-size: 18px
+    width: 100%
+    display: block
+    padding-bottom: 10px
+    border-bottom: 1px solid $color_lightGray
+    font-weight: 600
+  & .order_list
+    &-item
+      font-family: 'Verdana', sans-serif
+      font-size: 14px
+      font-weight: 600
+      display: flex
+      justify-content: space-between
+      border-bottom: 1px solid $color_lightGray
+      padding: 10px
+      &:last-of-type
+        border: none
+        background-color: darken($color_white, 7%)
+        border-top: 1px solid $color_gray
+        margin-bottom: 15px

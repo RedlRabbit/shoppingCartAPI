@@ -1,0 +1,27 @@
+<header class="header">
+  <nav class="nav">
+    <img src="assets/logo/logo.png" alt="Inwedo">
+    <ul class="nav-list">
+      <li class="nav-list__item">
+        <a routerLink="products">
+          <fa-icon [icon]="faStore"></fa-icon>
+          Products
+        </a>
+      </li>
+      <li class="nav-list__item">
+        <a routerLink="shopping-cart">
+          <fa-icon [icon]="faShoppingCart"></fa-icon>
+          Shopping Cart <sup> {{ totalProducts }}</sup>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section class="main-section">
+  <router-outlet></router-outlet>
+</section>
+
+<footer class="footer">
+  <div class="copyright">&copy; by Denys Tuptynskyi</div>
+</footer>

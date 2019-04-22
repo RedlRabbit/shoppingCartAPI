@@ -1,0 +1,19 @@
+<div class="products-container">
+  <ul class="products-list">
+    <li id="{{ product.id }}" class="products-list__item {{product.type}} products-list__item-active" *ngFor="let product of productsList">
+      <div>
+        <img class="products-list__item-img" src="{{product.imgUrl}}" alt="Inwedo">
+      </div>
+      <span class="products-list__item-title">{{ product.name }}</span>
+      <p class="products-list__item-desc"> {{ product.description }} </p>
+      <div>
+        <span class="products-list__item-price">{{ product.price }} zl</span>
+        <span class="products-list__item-available">Available: {{ product.availableAmount }} </span>
+      </div>
+      <button (click)="addToCart($event)" class="products-list__item-btnAdd">
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+        Add to Cart
+      </button>
+    </li>
+  </ul>
+</div>

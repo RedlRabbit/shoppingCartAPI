@@ -1,0 +1,72 @@
+<div class="sC_left-container">
+  <div class="titleSC">
+    <div class="itemsInSC">
+      You have <span>{{ productsInSC.length }}</span> items in your shopping cart.
+    </div>
+    <div class="clearSC">
+      <span (click)="clearShoppingCart()">Clear Shopping Cart</span>
+    </div>
+  </div>
+
+  <ng-container *ngIf="totalPrice == 0; then brak; else table">
+  </ng-container>
+
+  <ng-template #table>
+    <table class="shoppingCart-table">
+      <tr>
+        <th></th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let product of productsInSC">
+        <td class="shoppingCart-img">
+          <img src="{{product.imgUrl}}" alt="Inwedo">
+        </td>
+        <td class="shoppingCart-item">
+          {{ product.name }}
+        </td>
+        <td class="shoppingCart-quantity">
+          <button (click)="productQuantityDown($event)">-</button>
+          {{ product.quantity }}
+          <button (click)="productQuantityUp($event)">+</button>
+        </td>
+        <td class="shoppingCart-price">
+          {{ product.price }} zł
+        </td>
+      </tr>
+    </table>
+  </ng-template>
+
+  <ng-template #brak>
+    <h2>Koszyk jest pusty :)</h2>
+  </ng-template>
+</div>
+
+<div class="sC_right-container">
+  <div class="orderSummary">
+    <span class="order_title">Order Summary</span>
+    <ul class="order_list">
+      <li class="order_list-item" *ngFor="let product of productsInSC">
+        <div>
+          {{ product.quantity }} x {{ product.name }}
+        </div>
+        <div>
+          {{ product.quantity * product.price }} zł
+        </div>
+      </li>
+      <li class="order_list-item">
+          <div>
+            Total:
+          </div>
+          <div>
+            {{ totalPrice }} zł
+          </div>
+        </li>
+    </ul>
+    <button class="placeOrder-btn">
+      <fa-icon [icon]="faTruck"></fa-icon>
+      Place Order
+    </button>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+@import "../sass/normalize.sass"
+@import "../sass/colors.sass"
+@import "../sass/mixins.sass"
+
+body
+  font-family: "Lato", sans-serif
+  background-color: $color_lightGray
+
+.header
+  position: fixed
+  z-index: 10
+  top: 0
+  left: 0
+  width: calc(100% - 30px)
+  background-color: $color_gray
+  padding: 10px 15px
+  border-bottom: 1px solid darken($color_gray,5%)
+  .nav
+    max-width: 1920px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    & img
+      height: 50px
+    &-list
+      display: flex
+      &__item
+        & fa-icon
+          @include transition(.2s)
+          color: $color_white
+        &:first-of-type
+          margin-right: 15px
+        &:hover a, &:hover fa-icon
+          color: $color_lightGreen
+        & a
+          @include transition(.2s)
+          font-family: "Lato", sans-serif
+          font-weight: bold
+          display: block
+          text-decoration: none
+          color: $color_white
+          padding: 10px
+          & sup
+            color: $color_green
+            background-color: darken($color_gray, 5%)
+            padding: 3px 6px
+            border-radius: 50%
+
+.main-section
+  max-width: 1170px
+  padding: 50px 15px
+  width: 100%
+  margin: 0 auto
+  box-sizing: border-box
+
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  .copyright
+    font-size: 14px
+    font-family: 'Raleway'
+    padding: 5px
+
+
+@media screen and (max-width: 900px)
+  app-sc-list
+    flex-direction: column
+
+  .shoppingCart-container
+    .sC_left-container, .sC_right-container
+      width: 100%!important
+      box-sizing: border-box
+
+@media screen and (max-width: 550px)
+  .main-section
+    padding-top: 80px
+  .header .nav
+    flex-direction: column
+    &-list
+      border-top: 1px solid darken($color_gray,2%)
+      margin-top: 10px
+  .products
+    &_container
+      flex-direction: column
+    &-list
+      margin-top: 20px
+      padding-left: 0!important
+      justify-content: center
+      &__item
+        margin: 0 0 30px 0!important
+  .titleSC
+    & .itemsInSC
+      font-size: 14px
+    & .clearSC
+      font-size: 14px
+  .shoppingCart-table
+    & tr
+      padding: 10px
+      display: flex
+      flex-direction: column
+      &:first-of-type
+        display: none
+      td:not(:last-of-type)
+        border-bottom: 1px solid darken($color_lightGray,5%)
+
+@media screen and (max-width: 340px)
+  .titleSC
+    & .itemsInSC
+      font-size: 13px
+    & .clearSC
+      font-size: 13px
+  .header
+    .nav
+      &-list
+        &__item
+          & a
+            font-size: 14px
+
